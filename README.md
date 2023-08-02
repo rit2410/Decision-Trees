@@ -20,22 +20,22 @@ Splitting conditions refer to the criteria used to determine how the data should
 
 1. For Categorical Features: One common splitting condition for categorical features is based on the concept of Gini impurity or entropy.
 
-*** Gini Impurity:** Gini impurity measures the probability of misclassifying a randomly chosen element from a node. It ranges from 0 (perfectly pure, all elements belong to the same class) to 0.5 (completely impure, elements are evenly distributed among classes).
+* ** Gini Impurity:** Gini impurity measures the probability of misclassifying a randomly chosen element from a node. It ranges from 0 (perfectly pure, all elements belong to the same class) to 0.5 (completely impure, elements are evenly distributed among classes).
   * Formula: Gini(D) = 1 - Σ (p_i)^2, where p_i is the proportion of instances of class i in node D.
-*** Entropy: **Entropy measures the level of disorder or uncertainty in a node's class distribution.
+* ** Entropy: **Entropy measures the level of disorder or uncertainty in a node's class distribution.
 
   * Formula: Entropy(D) = - Σ (p_i * log2(p_i)), where p_i is the proportion of instances of class i in node D.
 The splitting condition for categorical features involves evaluating the impurity or entropy of each potential split and choosing the one that results in the greatest reduction in impurity or entropy.
 
-*** Information Gain: **Information gain measures the reduction in entropy achieved by partitioning the data based on a specific feature. It quantifies how much uncertainty about the class labels is reduced after the split.
+* ** Information Gain: **Information gain measures the reduction in entropy achieved by partitioning the data based on a specific feature. It quantifies how much uncertainty about the class labels is reduced after the split.
   * Formula: Information Gain(D, A) = Entropy(D) - Σ ((|D_v| / |D|) * Entropy(D_v)), where D is the current node, A is the feature being considered, D_v is the subset of instances associated with feature value v.
 
 2. For Numerical Features: When dealing with numerical features, decision trees use binary splits based on threshold values.
 
-*** Mean Squared Error (MSE):** For regression tasks, the mean squared error is often used as the splitting criterion. It measures the average squared difference between the actual and predicted values.
+* ** Mean Squared Error (MSE):** For regression tasks, the mean squared error is often used as the splitting criterion. It measures the average squared difference between the actual and predicted values.
   * Formula: MSE(D) = (1 / n) * Σ (y_i - ŷ)^2, where y_i is the actual value, ŷ is the predicted value, and n is the number of instances in node D.
 * The splitting condition for numerical features involves evaluating the MSE reduction for all possible threshold values and selecting the one that maximizes the reduction.
 
-*** Information Gain on Threshold (Numeric Feature):** Similar to information gain for categorical features, information gain can be used for numerical features by considering threshold-based splits. It calculates the reduction in entropy achieved by partitioning the data into two subsets based on a threshold value.
+* ** Information Gain on Threshold (Numeric Feature):** Similar to information gain for categorical features, information gain can be used for numerical features by considering threshold-based splits. It calculates the reduction in entropy achieved by partitioning the data into two subsets based on a threshold value.
 
 In summary, splitting conditions in decision trees involve calculating impurity (Gini impurity or entropy) or error (MSE) measures for potential splits based on either categorical or numerical features. The split that results in the greatest reduction in impurity or error is chosen to partition the data at each internal node, leading to the construction of an effective decision tree.
